@@ -34,7 +34,7 @@ pip install fastapi uvicorn httpx
 
 3. Run the server:
 ```bash
-uvicorn src.main:app --reload --port 8000
+uvicorn api:app --reload
 ```
 
 4. Access the API:
