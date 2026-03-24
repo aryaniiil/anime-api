@@ -1,25 +1,17 @@
 # Kuhi API v2.0
 
-<div align="center">
-  <img src="assets/imgs/logo.png" alt="Kuhi Logo" width="120">
-  <h3>Kuhi API v2.0</h3>
-  <p>A revamped and decrypted anime streaming API built for scale</p>
-</div>
+> ** DISCLAIMER:** This API is experimental and not reliable. Use at your own risk. No guarantees on uptime or data accuracy. I'M NOT RESPONSIBLE FOR ANY UNETHICAL USAGES OR LEGAL TROUBLES, ONLY FOR EDUCATION PURPOSE.
 
----
-
-> **⚠️ DISCLAIMER:** This API is experimental and not reliable. Use at your own risk. No guarantees on uptime or data accuracy.
-
-A revamped and decrypted anime streaming API built for scale. Kuhi provides a clean REST interface to search, filter, and stream anime content with automatic source extraction and proxy capabilities.
+A anime streaming API built for scale. Kuhi provides a clean REST interface to search, filter, and stream anime content with automatic source extraction and proxy capabilities.
 
 ## Features
 
-- 🔍 **Smart Search** - Search by anime name or AniList ID
-- 🎯 **Auto-Extraction** - Automatically finds best streaming sources
-- 🎬 **Movie Detection** - Automatically handles movies vs episodes
-- 🔐 **Decryption Pipeline** - Handles encrypted streaming sources
-- 🌐 **CORS Proxy** - Built-in proxy for bypassing CDN restrictions
-- 📺 **HLS Streaming** - Full M3U8 playlist and segment proxying
+-  **Smart Search** - Search by anime name or AniList ID
+-  **Auto-Extraction** - Automatically finds best streaming sources
+-  **Movie Detection** - Automatically handles movies vs episodes
+-  **Decryption Pipeline** - Handles encrypted streaming sources
+-  **CORS Proxy** - Built-in proxy for bypassing CDN restrictions
+-  **HLS Streaming** - Full M3U8 playlist and segment proxying
 
 ## Installation
 
@@ -31,7 +23,7 @@ A revamped and decrypted anime streaming API built for scale. Kuhi provides a cl
 
 1. Clone the repository:
 ```bash
-git clone <repository-url>
+git clone 
 cd Kuhi
 ```
 
@@ -254,21 +246,7 @@ Get episode list with provider mappings.
 curl "http://127.0.0.1:8000/anime/episodes/21"
 ```
 
-#### `GET /anime/sources`
-Get streaming sources for a specific episode.
-
-**Parameters:**
-- `episodeId` (string, required) - Episode tracking ID
-- `provider` (string, required) - Provider name (zoro, kiwi, etc.)
-- `anilistId` (int, required) - AniList ID
-- `category` (string, default: sub) - Category (sub, dub, raw)
-
-**Example:**
-```bash
-curl "http://127.0.0.1:8000/anime/sources?episodeId=animepahe:123&provider=kiwi&anilistId=21&category=sub"
-```
-
-#### `GET /anime/extract/{query}` 🌟
+#### `GET /anime/extract/{query}` 
 **Magic endpoint** - Automatically extracts streaming sources from anime name or ID.
 
 **Parameters:**
@@ -405,7 +383,7 @@ uvicorn src.main:app --reload --host 0.0.0.0 --port 8000
 ## Notes
 
 - All image URLs are automatically proxied through serveproxy.com
-- Provider priority: zoro > bee > telli > arc > yugen > jet > neo > kiwi
+- Provider priority: zoro > bee > kiwi > telli > arc > yugen > jet > neo
 - Movies automatically default to episode 1
 - M3U8 playlists and segments are proxied to bypass referer checks
 - CORS is enabled for all origins
